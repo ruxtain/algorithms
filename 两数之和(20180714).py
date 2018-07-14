@@ -2,8 +2,23 @@
 # -*- coding: utf-8 -*-
 # @Author: michael
 # @Date:   2018-07-14 09:38:23
-# @Last Modified by:   michael
-# @Last Modified time: 2018-07-14 14:59:44
+# @Last Modified by:   Michael Tan
+# @Last Modified time: 2018-07-14 15:12:05
+
+'''
+题目描述： https://leetcode-cn.com/problems/two-sum/description/
+题目大意：
+给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+
+示例:
+
+给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+'''
 
 import time 
 
@@ -48,7 +63,7 @@ test_targets = [
 
 def fun(nums, target):
     '''
-    暴力算法，直接完全遍历，算法复杂度 O(n2),耗时约 20s
+    暴力算法，直接完全遍历，算法复杂度 O(n2),对倒数第二个列表的耗时约 20s
     '''
     nums_len = len(nums)
 
@@ -62,7 +77,7 @@ def fun(nums, target):
 def fun(nums, target):
     '''
     找差值法。先找到差值，然后再次遍历列表，
-    直到遇到符合条件的值。算法复杂度仍然是 O(n2),耗时约13s
+    直到遇到符合条件的值。算法复杂度仍然是 O(n2),对倒数第二个列表的耗时约13s
     '''
     nums_len = len(nums)
     for i in range(nums_len):
@@ -75,7 +90,10 @@ def fun(nums, target):
 
 def fun(nums, target):
     '''
-    只遍历了一遍
+    先找到差值，然后判断差值是否存在（比直接用序号遍历快几倍)。
+    如果找到的差值和当前数(n)同一，则判断是否还有同值的数，没有则跳过。
+    算法复杂度 O(n)。对倒数第二个列表的耗时约 1.6s
+    其实，按理说 if x in xx 也是 for 循环，但是就是要快一点..不深究了。
     '''
     nums_len = len(nums)
     for i in range(nums_len):
