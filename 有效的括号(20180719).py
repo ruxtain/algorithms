@@ -3,7 +3,7 @@
 # @Author: ruxtain
 # @Date:   2018-07-19 09:58:47
 # @Last Modified by:   ruxtain
-# @Last Modified time: 2018-07-19 11:17:29
+# @Last Modified time: 2018-07-19 11:18:40
 """
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
