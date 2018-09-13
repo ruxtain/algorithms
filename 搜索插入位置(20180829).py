@@ -29,9 +29,7 @@ class Solution:
         :rtype: int
         """
         for i, n in enumerate(nums):
-            if target == n:
-                return i
-            if target < n:
+            if target <= n:
                 return i
         return i+1
             
